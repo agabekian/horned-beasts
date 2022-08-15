@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
-class  extends Main {
+class Main extends Component {
     render() { 
-        return ();
+        return (
+            <h2>main stuff</h2>
+        );
     }
 }
  

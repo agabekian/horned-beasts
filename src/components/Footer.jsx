@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 
 class Footer  extends Component {
     render() { 
-        return ();
+        return (
+            <h3>Armen Agabekian</h3>
+        );
     }
 }
  
