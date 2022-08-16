@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
 
 class HornedBeast extends Component {
     constructor(props) {
@@ -13,13 +17,16 @@ class HornedBeast extends Component {
     }
     render() {
         return (
-            <div>
-                <h2>{this.props.title}</h2>
-                <img src={this.props.image_url} alt={this.props.desciption} title="this.props.desciption"></img>
-                <p>{this.props.description}</p>
-                <h1>{this.state.likes}</h1>
-                <button onClick={this.upvote}>VOTE</button>
-            </div>
+
+                <Card style = {{ width:"40%", margin:"auto",padding:"15px"}}>
+                    <Card.Img style={{ width: "40%",margin:"auto" }} variant="bottom" src={this.props.image_url} />
+                    <Card.Body>
+                        <Card.Title>{this.props.title}</Card.Title>
+                        <Card.Text>{this.props.description}</Card.Text>
+                    </Card.Body>
+                    <h1>Likes: {this.state.likes}</h1>
+                    <Button style={{ width: "15%",margin:"auto" }} className="btn-small" variant="primary" onClick={this.upvote}>VOTE</Button>
+                </Card>
         );
     }
 }
