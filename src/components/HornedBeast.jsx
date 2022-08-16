@@ -1,16 +1,34 @@
 import React, { Component } from 'react';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
 
 class HornedBeast extends Component {
-
-    render() { 
+    constructor(props) {
+        super(props);
+        this.state = {
+            likes: 0
+        }
+    }
+    upvote = (e) => {
+        console.log(this);
+        this.setState({ likes: this.state.likes + 1 });
+    }
+    render() {
         return (
-            <div>
-                <h2>{this.props.title}</h2>
-                <img src={this.props.imageUrl} alt={this.props.desciption} title="this.props.desciption"></img>
-                <p>{this.props.description}</p>
-            </div>
+
+                <Card style = {{ width:"40%", margin:"auto",padding:"15px"}}>
+                    <Card.Img style={{ width: "40%",margin:"auto" }} variant="bottom" src={this.props.image_url} />
+                    <Card.Body>
+                        <Card.Title>{this.props.title}</Card.Title>
+                        <Card.Text>{this.props.description}</Card.Text>
+                    </Card.Body>
+                    <h1>Likes: {this.state.likes}</h1>
+                    <Button style={{ width: "15%",margin:"auto" }} className="btn-small" variant="primary" onClick={this.upvote}>VOTE</Button>
+                </Card>
         );
     }
 }
- 
+
 export default HornedBeast;
