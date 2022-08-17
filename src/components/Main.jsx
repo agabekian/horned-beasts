@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import HornedBeast from './HornedBeast';
 import data from './data.json'
-import ListGroup from 'react-bootstrap/ListGroup';
 
 class Main extends Component {
     constructor(props) {
