@@ -4,7 +4,6 @@ import Main from './components/Main';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SelectedBeast from './components/SelectedBeast';
-import Modal from 'react-bootstrap/Modal';
 import data from './components/data.json'
 
 class App extends React.Component {
@@ -12,27 +11,20 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allBeastData: data,
-      selectedBeast:{},
+      selectedBeast: {},
       showModal: false
     }
   }
-  // congratulate = (person) => {
-  //   this.handleOpen();
-  // }
 
   handleClose = () => {
-    this.setState( { showModal: false })
+    this.setState({ showModal: false })
   }
 
   handleOpen = (e) => {
-    console.log(e.target.alt)
-    let selectedBeast = this.state.allBeastData.find(beastObj=>beastObj.title ==e.target.alt );
+    // console.log(e.target.alt)
+    let selectedBeast = data.find(beastObj => beastObj.title == e.target.alt);
     // console.log(selectedBeast);
-    
-      this.setState( { selectedBeast, showModal: true });
-
-    
+    this.setState({ selectedBeast, showModal: true });
   }
 
   render() {
@@ -40,17 +32,16 @@ class App extends React.Component {
       <>
         <Header />
 
-        <Main 
-            allBeastData={this.state.allBeastData}
-            handleOpen={this.handleOpen}
-
+        <Main
+          handleOpen={this.handleOpen}
         />
-        <SelectedBeast 
+
+        <SelectedBeast
           selectedBeast={this.state.selectedBeast}
-          showModal = {this.state.showModal}
+          showModal={this.state.showModal}
           handleClose={this.handleClose}
         />
-        
+
         <Footer />
       </>
 
