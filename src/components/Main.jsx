@@ -3,9 +3,6 @@ import HornedBeast from './HornedBeast';
 import data from './data.json'
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
 
         return (
