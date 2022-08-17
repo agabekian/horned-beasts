@@ -15,14 +15,14 @@ class HornedBeast extends Component {
     }
     render() {
         return (
-            <Card style={{ width: "40%", margin: "auto", padding: "15px" }}>
-                <Card.Img style={{ width: "40%", margin: "auto" }} variant="bottom" src={this.props.image_url} />
+            <Card style={{  height: "100%" }} >
+                <Card.Img onClick={this.props.handleOpen} alt={this.props.title} variant="bottom" src={this.props.image_url} />
                 <Card.Body>
                     <Card.Title>{this.props.title}</Card.Title>
                     <Card.Text>{this.props.description}</Card.Text>
                 </Card.Body>
                 <h1>Likes: {this.state.likes}</h1>
-                <Button style={{ width: "15%", margin: "auto" }} className="btn-small" variant="primary" onClick={this.upvote}>VOTE</Button>
+                <Button style={{  margin: "20px" }} className="btn-small" variant="primary" onClick={this.upvote}>VOTE</Button>
             </Card>
         );
     }
