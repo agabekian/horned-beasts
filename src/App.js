@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { Component } from 'react';
 import Main from './components/Main';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -22,7 +22,7 @@ class App extends React.Component {
 
   handleOpen = (e) => {
     // console.log(e.target.alt)
-    let selectedBeast = data.find(beastObj => beastObj.title === e.target.alt);
+    let selectedBeast = data.find(beastObj => beastObj.title == e.target.alt);
     // console.log(selectedBeast);
     this.setState({ selectedBeast, showModal: true });
   }
