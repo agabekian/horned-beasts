@@ -32,8 +32,9 @@ class App extends React.Component {
       <>
         <Header />
 
-        <Main
-          handleOpen={this.handleOpen}
+        <Main 
+        handleOpen={this.handleOpen}
+        data = {data}
         />
 
         <SelectedBeast
@@ -47,7 +48,6 @@ class App extends React.Component {
 
     )
   }
-
 }
 
 export default App;

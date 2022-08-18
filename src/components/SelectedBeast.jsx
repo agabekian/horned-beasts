@@ -7,13 +7,12 @@ class SelectedBeast extends Component {
     render() {
         return (
             <>
-                <h3>Armen Agabekian</h3>
                 <Modal show={this.props.showModal} onHide={this.props.handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>{this.props.selectedBeast.title}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body >
-                        <Image className="img-fluid" src={this.props.selectedBeast.image_url} />
+                        <Image className="img-fluid roundedCirce"   src={this.props.selectedBeast.image_url} />
                         <p>{this.props.selectedBeast.description}</p>
                     </Modal.Body>
                     <Modal.Footer>
