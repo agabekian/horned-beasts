@@ -4,7 +4,7 @@ class Header extends Component {
     render() { 
         return (
             <div>
-                <h1 style={{'text-align':'center'}}>Choose your beast!</h1>
+                <h1 style={{'textAlign':'center'}}>Choose your beast!</h1>
             </div>
         );
     }
